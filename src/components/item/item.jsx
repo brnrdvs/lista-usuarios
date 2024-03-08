@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import "./item.css";
+import Heart from "../../components/Heart";
 
 function Item ( { item } ) {
     const navegar = useNavigate();
@@ -12,9 +13,12 @@ function Item ( { item } ) {
 
     return (
         <li className="item-lista">
-            <p className="item-nome">{ item.name }</p>
 				<div className="imagem-caixa">
 					<img className="imagem" alt={item.name} src={item.sprites.other["official-artwork"].front_default} />
+				</div>
+            <p className="item-nome">{ item.name }</p>
+				< div className="lista-coracao">
+					<Heart/>
 				</div>
         </li>
     );
