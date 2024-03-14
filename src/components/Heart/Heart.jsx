@@ -1,3 +1,4 @@
+import { toHaveFormValues } from "@testing-library/jest-dom/matchers";
 import "./Heart.css";
 
 function Heart({ onClick, selected = false }) {
@@ -5,6 +6,7 @@ function Heart({ onClick, selected = false }) {
         <svg
             version="1.1"
             viewBox="0 0 472.7 472.7"
+				data-testid="heart"
             className={`heart${selected ? " heart-selected" : ""}`}
             onClick={onClick}
         >

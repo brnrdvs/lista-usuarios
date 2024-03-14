@@ -10,7 +10,7 @@ function List({items = [] }) {
 
     return (
         <div className="lista-caixa">
-            <ul className="lista">
+            <ul className="lista" data-testid="list">
                 {map}
             </ul>
         </div>

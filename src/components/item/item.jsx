@@ -1,18 +1,12 @@
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { contextoIndex } from "../../context";
 import "./item.css";
 import Heart from "../../components/Heart";
 
 function Item ( { item } ) {
-    const navegar = useNavigate();
 
 	 const contexto = useContext(contextoIndex);
 	 const isFavorite = contexto.favoritos?.includes(item.id) || false;
-
-    const clicar = () => {
-        navegar(`/detalhes/${item.id}`);
-    };
 
 	 const marcar = () => {
 		if (isFavorite) {
@@ -23,13 +17,17 @@ function Item ( { item } ) {
 	 };
 
     return (
-        <li className="item-lista">
+        <li className="item-lista" data-testid={`list-item-${item.id}`}>
 				<div className="imagem-caixa">
 					<img className="imagem" alt={item.name} src={item.sprites.other["official-artwork"].front_default} />
 				</div>
             <p className="item-nome">{ item.name }</p>
 				< div className="lista-coracao">
-					<Heart onClick={marcar} selected ={isFavorite}/>
+					<Heart
+						onClick={marcar}
+						selected ={isFavorite}
+						data-testid={`heart-${item.id}`}
+					/>
 				</div>
         </li>
     );
