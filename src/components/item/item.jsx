@@ -26,7 +26,7 @@ function Item ( { item } ) {
 					<Heart
 						onClick={marcar}
 						selected ={isFavorite}
-						data-testid={`heart-${item.id}`}
+						testId={`heart-${item.id}`}
 					/>
 				</div>
         </li>

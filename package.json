@@ -9,13 +9,16 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "wait-on": "^7.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
+    "cypress:open": "npm start & wait-on http://localhost:3000 && cypress open",
+    "cypress:run": "npm start & wait-on http://localhost:3000 && cypress run",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/*.{js,jsx}",
     "prepare": "husky install",
@@ -24,7 +27,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:cypress/recomended"
     ]
   },
   "browserslist": {
@@ -42,13 +46,14 @@
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
-    "eslint": "^8.57.0",
+    "cypress": "^13.7.0",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^9.0.11"
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/components/**/*.{js,jsx}"
+      "src/components/**/*.{js,jsx}",
+      "!src/components/**/*.cy.{js,jsx}"
     ],
     "coverageReporters": [
       "lcov"
