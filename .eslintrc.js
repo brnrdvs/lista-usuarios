@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": "plugin:react/recommended",
+    "extends": ["plugin:react/recommended", "plugin:storybook/recommended"],
     "overrides": [
         {
             "env": {
@@ -29,6 +29,6 @@ module.exports = {
         "react/jsx-uses-react": "off", 
         "react/prop-types": "off",
         "semi": ["error", "always"],
-        "quotes": ["error", "double"] 
+        "quotes": "off"
     }
 };
