@@ -4,7 +4,10 @@ export default {
 	title: "Components/Heart",
 	component: Heart,
 	argTypes: {
-		onClick: { action: "clicked" },
+		onClick: {
+			action: "clicked",
+			description: "Chamada quando o elemento é clicado"
+		},
 		selected: {
 			control: "boolean",
 			defaultValue: false,
