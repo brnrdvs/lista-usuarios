@@ -19,7 +19,7 @@ function Item ( { item } ) {
     return (
         <li className="item-lista" data-testid={`list-item-${item.id}`}>
 				<div className="imagem-caixa">
-					<img className="imagem" alt={item.name} src={item.sprites.other["official-artwork"].front_default} />
+					<img className="imagem" alt={`Imagem de ${item.name}`} src={item.sprites.other["official-artwork"].front_default} />
 				</div>
             <p className="item-nome">{ item.name }</p>
 				< div className="lista-coracao">
